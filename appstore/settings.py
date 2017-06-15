@@ -54,15 +54,15 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'scrapyjs.SplashMiddleware':725,
+     'scrapyjs.SplashMiddleware':725,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware':None,
     'appstore.random_useragent.RandomUserAgentMiddleware':400,
     # 'appstore.random_proxy.RandomProxyMiddleware':100,
 }
 
-# SPLASH_URL = 'http://localhost:8050/'
-# DUPEFILTER_CLASS = 'scrapyjs.SplashAwareDupeFilter'
-# HTTPCACHE_STORAGE = 'scrapyjs.SplashAwareFSCacheStorage'
+SPLASH_URL = 'http://localhost:8050/'
+DUPEFILTER_CLASS = 'scrapyjs.SplashAwareDupeFilter'
+HTTPCACHE_STORAGE = 'scrapyjs.SplashAwareFSCacheStorage'
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
