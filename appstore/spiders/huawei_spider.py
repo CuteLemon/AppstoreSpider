@@ -18,8 +18,8 @@ class HuaweiSpider(scrapy.Spider):
         
         for href in hrefs:
             url = href.extract()
-#	    yield scrapy.Request(url,callback=self.parse_item)
-	    print "*****url:%s"%url
+            # yield scrapy.Request(url,callback=self.parse_item)
+            print "*****url:%s"%url
 
             yield scrapy.Request(url,self.parse_item,meta={
                 'splash':{
@@ -32,12 +32,12 @@ class HuaweiSpider(scrapy.Spider):
     def parse_item(self,response):
         page = Selector(response)
         item = AppstoreItem()
-#	print "page:%s"%page.get()        
+        # print "page:%s"%page.get()        
         item['title'] = page.xpath('//ul[@class="app-info-ul nofloat"]/li/p/span[@class="title"]/text()').\
                     extract_first().encode('utf-8')
         item['url'] = response.url
-	print item['url']
-	item['appid'] = page.xpath('//input[@id="appId"]/@value').extract_first().encode('utf-8')
+        # print item['url']
+        item['appid'] = page.xpath('//input[@id="appId"]/@value').extract_first().encode('utf-8')
 #       item['appid'] = re.search('C\d*',item['url']).group()
         item['intro'] = page.xpath('//meta[@name="description"]/@content').extract_first().encode('utf-8')
         
