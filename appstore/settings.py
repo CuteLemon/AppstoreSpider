@@ -60,7 +60,7 @@ DOWNLOADER_MIDDLEWARES = {
     # 'appstore.random_proxy.RandomProxyMiddleware':100,
 }
 
-SPLASH_URL = 'http://localhost:8050/'
+SPLASH_URL = 'http://47.93.5.97:8050/'
 DUPEFILTER_CLASS = 'scrapyjs.SplashAwareDupeFilter'
 HTTPCACHE_STORAGE = 'scrapyjs.SplashAwareFSCacheStorage'
 
