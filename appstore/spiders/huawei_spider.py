@@ -14,7 +14,7 @@ class HuaweiSpider(scrapy.Spider):
     def parse(self,response):
         page = Selector(response)
         
-        hrefs ="http://appstore.huawei.com" page.xpath('//h4[@class="title"]/a/@href')
+        hrefs ="http://appstore.huawei.com" + page.xpath('//h4[@class="title"]/a/@href')
         
         for href in hrefs:
             url = href.extract()
